@@ -2,8 +2,7 @@ CXX = g++
 CXXFLAGS = -std=c++11 -Wall
 
 
-file = /Users/yunfei/Desktop/leetcode/linked_list/876_middle_of_the_linked_list.cpp
-
+file = /Users/yunfei/Desktop/leetcode/queue/215_kth_largest_element_in_an_array.cpp
 all: compile run clean
 
 compile: ${file}
