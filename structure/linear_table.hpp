@@ -13,27 +13,27 @@ using namespace std;
 
 // Node class to represent a node of the linked list.
 template <class T>
-class Node {
+class ListNode {
     public:
-        T data;
-        Node* next;
+        T val;
+        ListNode* next;
 
         // Default constructor
-        Node() {
-            data = nullptr;
+        ListNode() {
+            val = nullptr;
             next = nullptr;
         }
     
         // Parameterised Constructor
-        Node(T data) {
-            this->data = data;
+        ListNode(T val) {
+            this->val = val;
             this->next = nullptr;
         }
 
         // Function to print the linked list.
-        friend ostream& operator<<(ostream& os, Node<T>* n) {
+        friend ostream& operator<<(ostream& os, ListNode<T>* n) {
             while(n != nullptr) {
-                os << n->data << ' ';
+                os << n->val << ' ';
                 n = n->next;
             }
             return os;
@@ -44,13 +44,13 @@ class Node {
 // Linked list class to implement a linked list.
 template <class T>
 class Linkedlist {
-    Node<T>* head;
+    ListNode<T>* head;
     public:
         // Default constructor
         Linkedlist() { head = nullptr; }
 
         // get the head
-        Node<T>* get_head();
+        ListNode<T>* get_head();
     
         // Function to insert a node at the end of the linked list.
         void append(T);
@@ -63,9 +63,9 @@ class Linkedlist {
     
         // Function to print the linked list.
         friend ostream& operator<<(ostream& os, Linkedlist<T>& l) {
-            Node<T> *pointer = l.head;
+            ListNode<T> *pointer = l.head;
             while(pointer != nullptr) {
-                os << pointer->data << ' ';
+                os << pointer->val << ' ';
                 pointer = pointer->next;
             }
             return os;

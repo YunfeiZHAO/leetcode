@@ -33,7 +33,7 @@ bool isPalindrome1(Node<int>* head) {
     // compare two sub linked list
     pointer = head;
     for(int i=0; i<length/2; i++) {
-        if(pointer->data != mp->data) {
+        if(pointer->val != mp->val) {
             return false;
         }
         pointer = pointer->next;
@@ -49,7 +49,7 @@ void pal(Node<int>*& head, Node<int>* tail, int& c){
     }
     tail=tail->next;
     pal(head,tail,c);
-    if(head->data!=tail->data){
+    if(head->val!=tail->val){
         c++;
     }
     head=head->next;

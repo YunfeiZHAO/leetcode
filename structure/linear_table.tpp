@@ -1,25 +1,25 @@
 // get head
 template <typename T>
-Node<T>* Linkedlist<T>::get_head() {
+ListNode<T>* Linkedlist<T>::get_head() {
     return this->head;
 }
 
 // append
 template <typename T>
 void Linkedlist<T>::append(T value) {
-    // create new node
-    Node<T> *new_node = new Node<T>(value);
-    Node<T> *pointer = this->head;
+    // create new ListNode
+    ListNode<T> *new_ListNode = new ListNode<T>(value);
+    ListNode<T> *pointer = this->head;
     // Assign to head if there is no element
     if(pointer == nullptr) {
-        this->head = new_node;
+        this->head = new_ListNode;
         return;
     }
     
     while(pointer->next != nullptr) {
         pointer = pointer->next;
     }
-    pointer->next = new_node;
+    pointer->next = new_ListNode;
     return;
 }
 
@@ -27,7 +27,7 @@ void Linkedlist<T>::append(T value) {
 template <typename T>
 int Linkedlist<T>::len() {
     int len = 0;
-    Node<T> *pointer = this->head;
+    ListNode<T> *pointer = this->head;
     while(pointer != nullptr) {
         len += 1;
         pointer = pointer->next;
@@ -54,8 +54,8 @@ void Linkedlist<T>::deleteNode(int index) {
         return;
     }
 
-    Node<T> *pointer = this->head;
-    Node<T> *prev_pointer = pointer;
+    ListNode<T> *pointer = this->head;
+    ListNode<T> *prev_pointer = pointer;
 
     pointer = pointer->next;
     index--;
